@@ -26,10 +26,6 @@ body{
     animation: fadeIn 2s forwards;
 }  
 
-* {
-    outline: 1px solid red;
-  }
-
 canvas {
     display: none;
     position: fixed;
