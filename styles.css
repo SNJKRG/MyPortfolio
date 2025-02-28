@@ -26,6 +26,7 @@ body{
     animation: fadeIn 2s forwards;
 }  
 
+
 canvas {
     display: none;
     position: fixed;
@@ -91,35 +92,29 @@ header{
     z-index: 10;
 }
 
-nav{
-    display: flex;
+nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
+    justify-items: center;
     background-color: #182e6b;
-    padding: 20px 20px;
+    padding: 20px;
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
     z-index: 20;
-}
-
-
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style: none;
-    margin: 0 10vw;
-    animation: fadeIn 2s forwards;
     opacity: 0;
+    animation: fadeIn 2s forwards;
     animation-delay: 2s;
-}
+  }
 
 header a{
     color: #FFFFFF;
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
-    margin-right: 18vw;
+    
 }
 
 .introduction{
@@ -457,9 +452,9 @@ main{
     100% { transform: scale(1) translateY(0); }
 }
 
-@keyframes swipeUp {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-100%); }
+@keyframes swipeLeft {
+    0% { transform: scale(1) translateX(-100%); }
+    100% { transform: scale(1) translateX(100%); }
 }
 
 
@@ -616,13 +611,48 @@ footer h1, footer h5, footer a {
 
 /* MEDIA QUERIES */
 
-
-@media (max-width:1320px){
+@media (max-width:1050px) {
     h1{
         font-size: 40px;
     }
     h2{
-        font-size: 30px;
+        font-size: 32px;
+    }
+    #photo{
+        width: 300px;
+        height: auto;
+    }
+    .carousel img {
+        width: 250px;
+        height: auto;
+        margin: 5px 0;
+     }
+
+    .socialSvg {
+        width: 30px;
+    }
+    .hint-container{
+        left: 20%;
+    }
+    h5{
+        font-size: 14px;
+    }
+    .gallery img{
+        width: 240px;
+        height: auto;
+     }
+     .socialContainer{
+        width: 50px;
+        height: 60px;
+    }
+}
+
+@media (min-width:1050px) and (max-width:1190px){
+    h1{
+        font-size: 48px;
+    }
+    h2{
+        font-size: 40px;
     }
 
     #photo{
@@ -631,20 +661,65 @@ footer h1, footer h5, footer a {
     }
 
     .carousel img {
-        width: 360px;
+        width: 300px;
         height: auto;
         margin: 5px 0;
      }
 
     .socialSvg {
-        width: 48px;
+        width: 36px;
     }
     .hint-container{
         left: 20%;
     }
+    h5{
+        font-size: 16px;
+    }
+    .gallery img{
+        width: 280px;
+        height: auto;
+     }
+     .socialContainer{
+        width: 60px;
+        height: 70px;
+    }
 }
 
-@media (min-width:1320px) and (max-width:1540px){
+@media (min-width:1190px) and (max-width:1360px){
+    h1{
+        font-size: 56px;
+    }
+    h2{
+        font-size: 48px;
+    }
+    #photo{
+        width: 420px;
+        height: auto;
+    }
+    .carousel img {
+        width: 340px;
+        height: auto;
+        margin: 10px 0;
+     }
+
+     .gallery img{
+        width: 320px;
+        height: auto;
+     }
+
+     .hint-container{
+        left: 15%;
+    }
+    .socialSvg {
+        width: 48px;
+    }
+    .socialContainer{
+        width: 70px;
+        height: 80px;
+    }
+}
+
+@media (min-width:1360px) and (max-width:1540px){
     h1{
         font-size: 64px;
     }
@@ -674,21 +749,56 @@ footer h1, footer h5, footer a {
 }
 
 @media (orientation: portrait){
-    .introduction h2:first-child {
-        margin-top: 15vw;
-        }
-    .click-hint{
-        animation: swipeUp 1s 10;
-    } 
-    .carousel {
+    h5{
+        font-size: 20px;
+    }
+    header a{
+        font-size: 18px;
+    }
+    .introduction{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #photo{
+        border-radius: 50%;
+        width: 240px;
+        height: auto;
+    }
+
+    #skills{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    #projects{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .carousel{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
         overflow-x: auto; /* Включаем горизонтальную прокрутку */
         -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
-        scroll-snap-type: x mandatory; /* Привязка к элементам при прокрутке */
-      }
-      .carousel img {
-        scroll-snap-align: center; /* Центрирование элементов в карусели */
-      }
-    
+        scroll-snap-type: x mandatory;
+    }
+    .current-project{
+        padding: 0 5px;
+    }
+    .gallery img{
+        width: 320px;
+        height: auto;
+     }
+     .hint-container {
+        bottom: 2vh;
+        left: 100%;
+        }
+    .click-hint{
+        animation: swipeLeft 1.5s infinite ease-in-out;
+    }
 }
 
 @media (min-width:1080px){
