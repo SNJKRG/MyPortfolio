@@ -213,6 +213,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
 }
 
 /* SKILLS */
@@ -610,7 +611,6 @@ footer h1, footer h5, footer a {
 }
 
 /* MEDIA QUERIES */
-
 @media (max-width:360px){
     h1{
         font-size: 28px;
@@ -618,29 +618,25 @@ footer h1, footer h5, footer a {
     h2{
         font-size: 20px;
     }
-
     h5{
         font-size: 12px;
     }
-
     .carousel img {
-        width: 40px;
+        width: 80px;
         height: auto;
         margin: 2px 0;
-     }
-
-     .gallery img{
+    }
+    .gallery img{
         width: 30px;
         height: auto;
-     }
-     .socialSvg {
+    }
+    .socialSvg {
         width: 24px;
     }
     .socialContainer{
         width: 40px;
         height: 50px;
     }
-    
 }
 
 @media (min-width:360px) and (max-width:700px) {
@@ -650,34 +646,41 @@ footer h1, footer h5, footer a {
     h2{
         font-size: 28px;
     }
+    #skills{
+        padding: 5px;
+        width: 100%;
+    }
+    .carousel{
+        margin-right: 5px;
+    }
     .carousel img {
-        width: 80px;
+        width: 200px;
         height: auto;
         margin: 2px 0;
-     }
-
-     .gallery img{
-        width: 60px;
+    }
+    .gallery img{
+        width: 250px;
         height: auto;
-     }
-     .socialSvg {
+    }
+    .socialSvg {
         width: 24px;
     }
     .socialContainer{
         width: 40px;
         height: 50px;
     }
-
     h4{
         font-size: 20px;
     }
-
     .icons img{
-        width: 36px;
+        width: 36px !important;
     }
 }
 
 @media (min-width:700px) and (max-width:1050px) {
+    bodyy{
+        overflow-x: hidden;
+    }
     h1{
         font-size: 30px;
     }
@@ -692,8 +695,7 @@ footer h1, footer h5, footer a {
         width: 200px;
         height: auto;
         margin: 5px 0;
-     }
-
+    }
     .socialSvg {
         width: 30px;
     }
@@ -706,18 +708,19 @@ footer h1, footer h5, footer a {
     h5{
         font-size: 14px;
     }
-
     .icons img{
         width: 48px;
     }
-
     .gallery img{
-        width: 150px;
+        width: 150px !important;
         height: auto;
-     }
-     .socialContainer{
+    }
+    .socialContainer{
         width: 50px;
         height: 60px;
+    }
+    .icons img{
+        width: 48px;
     }
 }
 
@@ -728,18 +731,15 @@ footer h1, footer h5, footer a {
     h2{
         font-size: 40px;
     }
-
     #photo{
         width: 360px;
         height: auto;
     }
-
     .carousel img {
         width: 300px;
         height: auto;
         margin: 5px 0;
-     }
-
+    }
     .socialSvg {
         width: 36px;
     }
@@ -752,10 +752,13 @@ footer h1, footer h5, footer a {
     .gallery img{
         width: 280px;
         height: auto;
-     }
-     .socialContainer{
+    }
+    .socialContainer{
         width: 60px;
         height: 70px;
+    }
+    .icons img{
+        width: 56px;
     }
 }
 
@@ -774,14 +777,12 @@ footer h1, footer h5, footer a {
         width: 340px;
         height: auto;
         margin: 10px 0;
-     }
-
-     .gallery img{
+    }
+    .gallery img{
         width: 320px;
         height: auto;
-     }
-
-     .hint-container{
+    }
+    .hint-container{
         left: 15%;
     }
     .socialSvg {
@@ -807,17 +808,15 @@ footer h1, footer h5, footer a {
         width: 500px;
         height: auto;
     }
-
     .socialSvg {
         width: 56px;
     }
-
     .carousel img {
         width: 400px;
         height: auto;
         margin: 10px 0;
-     }
-     .hint-container{
+    }
+    .hint-container{
         left: 20%;
     }
 }
@@ -829,18 +828,19 @@ footer h1, footer h5, footer a {
     header a{
         font-size: 18px;
     }
+    canvas{
+        display: none !important;
+    }
     .introduction{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-
     #photo{
         border-radius: 50%;
         width: 240px;
         height: auto;
     }
-
     #skills{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -850,7 +850,6 @@ footer h1, footer h5, footer a {
         display: flex;
         flex-direction: column-reverse;
     }
-
     .carousel{
         margin-top: 40px;
         display: flex;
@@ -863,13 +862,13 @@ footer h1, footer h5, footer a {
         padding: 0 5px;
     }
     .gallery img{
-        width: 320px;
+        width: 500px;
         height: auto;
-     }
-     .hint-container {
+    }
+    .hint-container {
         bottom: 2vh;
         left: 100%;
-        }
+    }
     .click-hint{
         animation: swipeLeft 1.5s infinite ease-in-out;
     }
@@ -878,5 +877,31 @@ footer h1, footer h5, footer a {
 @media (min-width:1080px){
     canvas{
         display: block;
+    }
+}
+
+/* Дополнительный медиа-запрос для горизонтальной (landscape) ориентации на мобильных и планшетах */
+@media (orientation: landscape) {
+    canvas {
+        display: block !important;
+    }
+    .introduction {
+        flex-direction: row;
+        align-items: center;
+    }
+    #photo {
+        border-radius: 0;
+        width: auto;
+        max-width: 300px;
+    }
+    #skills {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #projects {
+        flex-direction: row;
+    }
+    .carousel {
+        margin-top: 20px;
+        overflow-x: auto;
     }
 }
