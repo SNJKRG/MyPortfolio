@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -26,41 +26,41 @@
                 <h2 id="message2">I am a frontend developer</h2>
                 <!-- <a id="message3">View Resume</a> -->
             </span>
-            <img id="photo" src="./assets/me.png"></img>
+            <img id="photo" src="./assets/me.png" loading="lazy"></img>
         </section>
-        <img src="./assets/arrow.svg" id="arrow" onclick="scrollDown()">
+        <img src="./assets/arrow.svg" id="arrow" onclick="scrollDown()" loading="lazy">
         <h5>Scroll down</h5>
     </header>
     <main>
         <section id="skills">
             <h2>My Skills</h2>
             <h4>Programming languages</h4>
-            <div class="icons"><img src="./assets/stack/Java.svg" alt="java" id="icons1"><h5>Java</h5></div>
-            <div class="icons"><img src="./assets/stack/Javascript.svg" alt="javascript" id="icons1"><h5>Java Script</h5></div>
-            <div class="icons"><img src="./assets/stack/C++.svg" alt="c++" id="icons1"><h5>C++</h5></div>
-            <div class="icons"><img src="./assets/stack/PHP.svg" alt="php" id="icons1"><h5>PHP</h5></div>
-            <div class="icons"><img src="./assets/stack/Python.svg" alt="python" id="icons1"><h5>Python</h5></div>
+            <div class="icons"><img src="./assets/stack/Java.svg" alt="java" id="icons1" loading="lazy"><h5>Java</h5></div>
+            <div class="icons"><img src="./assets/stack/Javascript.svg" alt="javascript" id="icons1" loading="lazy"><h5>Java Script</h5></div>
+            <div class="icons"><img src="./assets/stack/C++.svg" alt="c++" id="icons1" loading="lazy"><h5>C++</h5></div>
+            <div class="icons"><img src="./assets/stack/PHP.svg" alt="php" id="icons1" loading="lazy"><h5>PHP</h5></div>
+            <div class="icons"><img src="./assets/stack/Python.svg" alt="python" id="icons1" loading="lazy"><h5>Python</h5></div>
             <h4>Frameworks</h4>
-            <div class="icons"><img src="./assets/stack/Tailwind.svg" alt="tailwing" id="icons2"><h5>Tailwind CSS</h5></div>
-            <div class="icons"><img src="./assets/stack/React.svg" alt="react" id="icons2"><h5>React</h5></div>
-            <div class="icons"><img src="./assets/stack/Redux.svg" alt="redux" id="icons2"><h5>Redux</h5></div>
-            <div class="icons"><img src="./assets/stack/Docker.svg" alt="docker" id="icons2"><h5>Docker</h5></div>
+            <div class="icons"><img src="./assets/stack/Tailwind.svg" alt="tailwing" id="icons2" loading="lazy"><h5>Tailwind CSS</h5></div>
+            <div class="icons"><img src="./assets/stack/React.svg" alt="react" id="icons2" loading="lazy"><h5>React</h5></div>
+            <div class="icons"><img src="./assets/stack/Redux.svg" alt="redux" id="icons2" loading="lazy"><h5>Redux</h5></div>
+            <div class="icons"><img src="./assets/stack/Docker.svg" alt="docker" id="icons2" loading="lazy"><h5>Docker</h5></div>
             <h4>Web Technologies</h4>
-            <div class="icons"><img src="./assets/stack/HTML.svg" alt="html" id="icons3"><h5>HTML</h5></div>
-            <div class="icons"><img src="./assets/stack/CSS.svg" alt="css" id="icons3"><h5>CSS</h5></div>
-            <div class="icons"><img src="./assets/stack/Boostrap.svg" alt="boostrap" id="icons3"><h5>Boostrap</h5></div>
-            <div class="icons"><img src="./assets/stack/Tilda.svg" alt="tilda" id="icons3"><h5>Tilda</h5></div>
-            <div class="icons"><img src="./assets/stack/Wordpress.svg" alt="wordpress" id="icons3"><h5>WordPress</h5></div>
+            <div class="icons"><img src="./assets/stack/HTML.svg" alt="html" id="icons3" loading="lazy"><h5>HTML</h5></div>
+            <div class="icons"><img src="./assets/stack/CSS.svg" alt="css" id="icons3" loading="lazy"><h5>CSS</h5></div>
+            <div class="icons"><img src="./assets/stack/Boostrap.svg" alt="boostrap" id="icons3" loading="lazy"><h5>Boostrap</h5></div>
+            <div class="icons"><img src="./assets/stack/Tilda.svg" alt="tilda" id="icons3" loading="lazy"><h5>Tilda</h5></div>
+            <div class="icons"><img src="./assets/stack/Wordpress.svg" alt="wordpress" id="icons3" loading="lazy"><h5>WordPress</h5></div>
             <h4>Tools</h4>
-            <div class="icons"><img src="./assets/stack/GithubW.svg" alt="github" id="icons4"><h5>Github</h5></div>
-            <div class="icons"><img src="./assets/stack/Figma.svg" alt="figma" id="icons4"><h5>Figma</h5></div>
-            <div class="icons"><img src="./assets/stack/Photoshop.svg" alt="photoshop" id="icons4"><h5>Photoshop</h5></div>
+            <div class="icons"><img src="./assets/stack/GithubW.svg" alt="github" id="icons4" loading="lazy"><h5>Github</h5></div>
+            <div class="icons"><img src="./assets/stack/Figma.svg" alt="figma" id="icons4" loading="lazy"><h5>Figma</h5></div>
+            <div class="icons"><img src="./assets/stack/Photoshop.svg" alt="photoshop" id="icons4" loading="lazy"><h5>Photoshop</h5></div>
             <h4>Soft Skills</h4>
-            <div class="icons"><img src="./assets/stack/collab.svg" alt="collaboration" id="icons5"><h5>Collaboration</h5></div>
-            <div class="icons"><img src="./assets/stack/learn.svg" alt="learner" id="icons5"><h5>Constant Learner</h5></div>
-            <div class="icons"><img src="./assets/stack/goal.svg" alt="goal" id="icons5"><h5>Goal oriented</h5></div>
-            <div class="icons"><img src="./assets/stack/UI.svg" alt="UI/UX" id="icons5"><h5>Friendly Interface</h5></div>
-            <div class="icons"><img src="./assets/stack/Creative.svg" alt="goal" id="icons5"><h5>Creative design</h5></div>
+            <div class="icons"><img src="./assets/stack/collab.svg" alt="collaboration" id="icons5" loading="lazy"><h5>Collaboration</h5></div>
+            <div class="icons"><img src="./assets/stack/learn.svg" alt="learner" id="icons5" loading="lazy"><h5>Constant Learner</h5></div>
+            <div class="icons"><img src="./assets/stack/goal.svg" alt="goal" id="icons5" loading="lazy"><h5>Goal oriented</h5></div>
+            <div class="icons"><img src="./assets/stack/UI.svg" alt="UI/UX" id="icons5" loading="lazy"><h5>Friendly Interface</h5></div>
+            <div class="icons"><img src="./assets/stack/Creative.svg" alt="goal" id="icons5" loading="lazy"><h5>Creative design</h5></div>
         </section>
         <h2>My Projects</h2>
         <section id="projects">
@@ -79,10 +79,10 @@
                         <img src="./assets/stack/Redux.svg" alt="redux">
                     </div>
                     <div class="gallery">
-                        <img src="./assets/sneakercare/2.jpg" onclick="zoomIn(this)">
-                        <img src="./assets/sneakercare/3.jpg" onclick="zoomIn(this)">
-                        <img src="./assets/sneakercare/4.jpg" onclick="zoomIn(this)">
-                        <img src="./assets/sneakercare/5.jpg" onclick="zoomIn(this)">
+                        <img src="./assets/sneakercare/2.jpg" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/sneakercare/3.jpg" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/sneakercare/4.jpg" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/sneakercare/5.jpg" onclick="zoomIn(this)" loading="lazy"> 
                     </div>
                   </div>
                   <a href="https://github.com/SNJKRG/JReact_Sneakercare_kz"><button class="project-link">Open in GitHub</button></a>  
@@ -103,10 +103,10 @@
                         <img src="./assets/stack/supabase.svg" alt="supabase">
                     </div>
                     <div class="gallery">
-                        <img src="./assets/biamino/1.png" onclick="zoomIn(this)">
-                        <img src="./assets/biamino/2.png" onclick="zoomIn(this)">
-                        <img src="./assets/biamino/3.png" onclick="zoomIn(this)">
-                        <img src="./assets/biamino/4.png" onclick="zoomIn(this)">
+                        <img src="./assets/biamino/1.png" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/biamino/2.png" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/biamino/3.png" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/biamino/4.png" onclick="zoomIn(this)" loading="lazy">
                     </div>
                   </div>
                   <a href="https://biamino-club-od30tr2qa-arslankamchybekovs-projects.vercel.app"><button class="project-link">Open in Versel</button>  </a>
@@ -126,10 +126,10 @@
                         <img src="./assets/stack/GithubW.svg" alt="github">
                     </div>
                     <div class="gallery">
-                        <img src="./assets/termproject/1.png" onclick="zoomIn(this)">
-                        <img src="./assets/termproject/2.png" onclick="zoomIn(this)">
-                        <img src="./assets/termproject/3.png" onclick="zoomIn(this)">
-                        <img src="./assets/termproject/4.png" onclick="zoomIn(this)">
+                        <img src="./assets/termproject/1.png" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/termproject/2.png" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/termproject/3.png" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/termproject/4.png" onclick="zoomIn(this)" loading="lazy">
                     </div>
                   </div>
                   <a href="https://github.com/itu-itis24-kirgizbaev23/TermProject"><button class="project-link">Open in GitHub</button>  </a>
@@ -147,11 +147,10 @@
                         <img src="./assets/Telegram.svg" alt="Telegram">
                     </div>
                     <div class="gallery">
-                        <img src="./assets/gifty/1.png" onclick="zoomIn(this)">
-                        <img src="./assets/gifty/2.png" onclick="zoomIn(this)">
-                        <img src="./assets/gifty/3.png" onclick="zoomIn(this)">
-                        <img src="./assets/gifty/4.png" onclick="zoomIn(this)">
-                    </div>
+                        <img src="./assets/gifty/1.png" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/gifty/2.png" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/gifty/3.png" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/gifty/4.png" onclick="zoomIn(this)" loading="lazy">
                   </div>
                   <a href="https://github.com/SNJKRG/gifty"><button class="project-link">Open in GitHub</button>  </a>
             </article>
@@ -170,8 +169,8 @@
                         <img src="./assets/Gmail.svg" alt="google">
                     </div>
                     <div class="gallery">
-                        <img src="./assets/phpapp/1.png" onclick="zoomIn(this)">
-                        <img src="./assets/phpapp/2.png" onclick="zoomIn(this)">
+                        <img src="./assets/phpapp/1.png" onclick="zoomIn(this)" loading="lazy">
+                        <img src="./assets/phpapp/2.png" onclick="zoomIn(this)" loading="lazy">
                     </div>
                   </div>
                   <a href="https://github.com/SNJKRG/MySlots"><button class="project-link">Open in GitHub</button>  </a>
@@ -182,9 +181,9 @@
             </div>
 
             <div class="carousel">
-                <div class="next-project" onclick=slide(this)><img src="./assets/biamino/1.png" alt="Biamino"></div>
-                <div class="current-project" onclick="slide(this)"><img src="./assets/sneakercare/1.jpg" alt="Sneakercare"></div>
-                <div class="next-project" onclick="slide(this)"><img src="./assets/phpapp/1.png" alt="PHP App"></div>
+                <div class="next-project" onclick=slide(this)><img src="./assets/biamino/1.png" alt="Biamino" loading="lazy"></div>
+                <div class="current-project" onclick="slide(this)"><img src="./assets/sneakercare/1.jpg" alt="Sneakercare" loading="lazy"></div>
+                <div class="next-project" onclick="slide(this)"><img src="./assets/phpapp/1.png" alt="PHP App" loading="lazy"></div>
             </div>  
         </section>
     </main>
