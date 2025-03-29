@@ -396,6 +396,12 @@ main{
     cursor: pointer;
 }
 
+.prev-project{
+    transform: scale(0.8);
+    opacity: 0.5;
+    cursor: pointer;
+}
+
 .current-project{
     transform: scale(1.2);
     padding-right: 60px;
@@ -419,6 +425,17 @@ main{
 .next-project:hover{
     opacity: 1;
 }
+
+.prev-project img:hover{
+    transform: scale(1.1);
+    box-shadow: #00c700 0px 0px 20px;
+}
+
+.prev-project:hover{
+    opacity: 1;
+}
+
+
 
 
 @keyframes rotation_481 {
@@ -611,6 +628,7 @@ footer h1, footer h5, footer a {
 }
 
 /* MEDIA QUERIES */
+/* 
 @media (max-width:360px){
     h1{
         font-size: 28px;
@@ -855,10 +873,10 @@ footer h1, footer h5, footer a {
         display: flex;
         flex-direction: row;
         overflow-x: auto; /* Включаем горизонтальную прокрутку */
-        -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
-        scroll-snap-type: x mandatory;
-    }
-    .current-project{
+        /* -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
+        /* scroll-snap-type: x mandatory; */
+    /* }  */
+    /* .current-project{
         padding: 0 5px;
     }
     .gallery img{
@@ -881,7 +899,7 @@ footer h1, footer h5, footer a {
 }
 
 /* Дополнительный медиа-запрос для горизонтальной (landscape) ориентации на мобильных и планшетах */
-@media (orientation: landscape) {
+/* @media (orientation: landscape) {
     canvas {
         display: block !important;
     }
@@ -904,4 +922,4 @@ footer h1, footer h5, footer a {
         margin-top: 20px;
         overflow-x: auto;
     }
-}
+} */

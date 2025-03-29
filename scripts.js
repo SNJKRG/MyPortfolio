@@ -1,130 +1,134 @@
-        // Your projects and currentIndex
-        const projects = [
-            { src: './assets/biamino/1.png', alt: 'Biamino' },
-            { src: './assets/sneakercare/1.jpg', alt: 'Shop' },
-            { src: './assets/phpapp/1.png', alt: 'App' },
-            { src: './assets/termproject/1.png', alt: 'Game' },
-            { src: './assets/gifty/1.png', alt: 'Gifty' }
-          ];
-      
-          let currentIndex = 1;
-      
-          function updateSlides() {
-            const carousel = document.querySelector('.carousel');
-            const slides = carousel.children;
-            
-            const topIndex = (currentIndex - 1 + projects.length) % projects.length;
-            const bottomIndex = (currentIndex + 1) % projects.length;
-            
-            if (slides[0]) {
-              slides[0].innerHTML = `<img src="${projects[topIndex].src}" alt="${projects[topIndex].alt}">`;
-            }
-            if (slides[1]) {
-              slides[1].innerHTML = `<img src="${projects[currentIndex].src}" alt="${projects[currentIndex].alt}">`;
-            }
-            if (slides[2]) {
-              slides[2].innerHTML = `<img src="${projects[bottomIndex].src}" alt="${projects[bottomIndex].alt}">`;
-            }
-            
-            slides[-1].className = "next-project";
-            slides[0].className = "current-project";
-            slides[1].className = "next-project";
-          }
-      
-          function slide(clickedElement) {
-            const carousel = document.querySelector('.carousel');
-            const slides = Array.from(carousel.children);
-            const clickedIndex = slides.indexOf(clickedElement);
+// Your projects and currentIndex
+const projects = [
+  { src: './assets/biamino/1.png', alt: 'Biamino' },
+  { src: './assets/sneakercare/1.jpg', alt: 'Shop' },
+  { src: './assets/phpapp/1.png', alt: 'App' },
+  { src: './assets/termproject/1.png', alt: 'Game' },
+  { src: './assets/gifty/1.png', alt: 'Gifty' },
+  { src: './assets/raduga/1.png', alt: 'Raduga' },
+  { src: './assets/mstarter/1.png', alt: 'mstarter' },
+  { src: './assets/kvantland/1.png', alt: 'Kvantland' }
+];
 
-            document.addEventListener("click", function() {
-                document.querySelector(".click-hint").style.display = "none";
-            }, { once: true });
-            
-            if (clickedIndex === 1) return;
-            
-            if (clickedIndex === 0) {
-              currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-            } else if (clickedIndex === 2) {
-              currentIndex = (currentIndex + 1) % projects.length;
-            }
-            
-            const projectIds = ['biamino', 'sneakercare', 'app', 'game', 'gifty'];
-            projectIds.forEach((id, index) => {
-              const article = document.getElementById(id);
-              if (article) {
-                // Показываем статью, если индекс совпадает с currentIndex, иначе скрываем
-                article.style.display = (index === currentIndex) ? 'flex' : 'none';
-              }
-            }
-            );  
+let currentIndex = 1;
 
-            updateSlides();
-          }
-      
-          document.addEventListener('DOMContentLoaded', () => {
-            updateSlides();
-            
-            // Attach click events to each slide
-            const slides = document.querySelectorAll('.carousel > div');
-            slides.forEach(slideEl => {
-              slideEl.addEventListener('click', function() {
-                slide(this);
-              });
-            });
-          });
+function updateSlides() {
+  const carousel = document.querySelector('.carousel');
+  const slides = carousel.children;
+  
+  const topIndex = (currentIndex - 1 + projects.length) % projects.length;
+  const bottomIndex = (currentIndex + 1) % projects.length;
+  
+  if (slides[0]) {
+    slides[0].innerHTML = `<img src="${projects[topIndex].src}" alt="${projects[topIndex].alt}">`;
+  }
+  if (slides[1]) {
+    slides[1].innerHTML = `<img src="${projects[currentIndex].src}" alt="${projects[currentIndex].alt}">`;
+  }
+  if (slides[2]) {
+    slides[2].innerHTML = `<img src="${projects[bottomIndex].src}" alt="${projects[bottomIndex].alt}">`;
+  }
+  
+  slides[-1].className = "next-project";
+  slides[0].className = "current-project";
+  slides[1].className = "next-project";
+}
 
+function slide(clickedElement) {
+  const carousel = document.querySelector('.carousel');
+  const slides = Array.from(carousel.children);
+  const clickedIndex = slides.indexOf(clickedElement);
 
-    function scrollDown() {
-        window.scrollBy(0, window.innerHeight * 0.9);
+  document.addEventListener("click", function() {
+      document.querySelector(".click-hint").style.display = "none";
+  }, { once: true });
+  
+  if (clickedIndex === 1) return;
+  
+  if (clickedIndex === 0) {
+    currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+  } else if (clickedIndex === 2) {
+    currentIndex = (currentIndex + 1) % projects.length;
+  }
+  
+  const projectIds = ['biamino', 'sneakercare', 'app', 'game', 'gifty', 'raduga', 'mstarter', 'kvantland'];
+  projectIds.forEach((id, index) => {
+    const article = document.getElementById(id);
+    if (article) {
+      // Показываем статью, если индекс совпадает с currentIndex, иначе скрываем
+      article.style.display = (index === currentIndex) ? 'flex' : 'none';
     }
+  }
+  );  
 
-    function zoomIn(imgElement) {
-        // Ищем или создаём оверлей
-        let overlay = document.getElementById("zoom-overlay");
-        if (!overlay) {
-            overlay = document.createElement("div");
-            overlay.id = "zoom-overlay";
-            Object.assign(overlay.style, {
-                position: "fixed",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                backgroundColor: "rgba(0,0,0,0.8)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "zoom-out",
-                zIndex: 1000
-            });
-            // При клике на оверлей выполняется функция zoomOut
-            overlay.addEventListener("click", zoomOut);
-            document.body.appendChild(overlay);
-        }
-        
-        // Ищем или создаём элемент для увеличенной картинки
-        let zoomedImage = document.getElementById("zoomed-image");
-        if (!zoomedImage) {
-            zoomedImage = document.createElement("img");
-            zoomedImage.id = "zoomed-image";
-            Object.assign(zoomedImage.style, {
-                maxWidth: "90%",
-                maxHeight: "90%"
-            });
-            overlay.appendChild(zoomedImage);
-        }
-        
-        // Устанавливаем источник картинки и показываем оверлей
-        zoomedImage.src = imgElement.src;
-        overlay.style.display = "flex";
-    }
-    
-    function zoomOut() {
-        const overlay = document.getElementById("zoom-overlay");
-        if (overlay) {
-            overlay.style.display = "none";
-        }
-    }
+  updateSlides();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateSlides();
+  
+  // Attach click events to each slide
+  const slides = document.querySelectorAll('.carousel > div');
+  slides.forEach(slideEl => {
+    slideEl.addEventListener('click', function() {
+      slide(this);
+    });
+  });
+});
+
+
+function scrollDown() {
+window.scrollBy(0, window.innerHeight * 0.9);
+}
+
+function zoomIn(imgElement) {
+// Ищем или создаём оверлей
+let overlay = document.getElementById("zoom-overlay");
+if (!overlay) {
+  overlay = document.createElement("div");
+  overlay.id = "zoom-overlay";
+  Object.assign(overlay.style, {
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "rgba(0,0,0,0.8)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      cursor: "zoom-out",
+      zIndex: 1000
+  });
+  // При клике на оверлей выполняется функция zoomOut
+  overlay.addEventListener("click", zoomOut);
+  document.body.appendChild(overlay);
+}
+
+// Ищем или создаём элемент для увеличенной картинки
+let zoomedImage = document.getElementById("zoomed-image");
+if (!zoomedImage) {
+  zoomedImage = document.createElement("img");
+  zoomedImage.id = "zoomed-image";
+  Object.assign(zoomedImage.style, {
+      maxWidth: "90%",
+      maxHeight: "90%"
+  });
+  overlay.appendChild(zoomedImage);
+}
+
+// Устанавливаем источник картинки и показываем оверлей
+zoomedImage.src = imgElement.src;
+overlay.style.display = "flex";
+}
+
+function zoomOut() {
+const overlay = document.getElementById("zoom-overlay");
+if (overlay) {
+  overlay.style.display = "none";
+}
+}
+  
 
 /* -------------------------------------------------
          ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ
