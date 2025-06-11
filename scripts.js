@@ -7,7 +7,12 @@ const projects = [
   { src: './assets/gifty/1.png', alt: 'Gifty' },
   { src: './assets/raduga/1.png', alt: 'Raduga' },
   { src: './assets/mstarter/1.png', alt: 'mstarter' },
-  { src: './assets/kvantland/1.png', alt: 'Kvantland' }
+  { src: './assets/kvantland/1.png', alt: 'Kvantland' },
+  { src: './assets/eurotour/1.png', alt: 'Eurotour' },
+  { src: './assets/atalyk/1.png', alt: 'Atalyk' },
+  { src: './assets/staysafe/1.png', alt: 'Stay Safe' },
+  { src: './assets/ushoo/1.png', alt: 'Ushoo' },
+  { src: './assets/mujiru/1.png', alt: 'Mujiri' }
 ];
 
 let currentIndex = 1;
@@ -51,7 +56,7 @@ function slide(clickedElement) {
     currentIndex = (currentIndex + 1) % projects.length;
   }
   
-  const projectIds = ['biamino', 'sneakercare', 'app', 'game', 'gifty', 'raduga', 'mstarter', 'kvantland'];
+  const projectIds = ['biamino', 'sneakercare', 'app', 'game', 'gifty', 'raduga', 'mstarter', 'kvantland', 'eurotour', 'atalyk', 'staysafe', 'ushoo', 'mujiri']
   projectIds.forEach((id, index) => {
     const article = document.getElementById(id);
     if (article) {
